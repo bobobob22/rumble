@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/rumble/static/css/main.5f361e03.chunk.css",
-    "main.js": "/rumble/static/js/main.62f29077.chunk.js",
-    "main.js.map": "/rumble/static/js/main.62f29077.chunk.js.map",
+    "main.js": "/rumble/static/js/main.478a0944.chunk.js",
+    "main.js.map": "/rumble/static/js/main.478a0944.chunk.js.map",
     "runtime-main.js": "/rumble/static/js/runtime-main.6266cb62.js",
     "runtime-main.js.map": "/rumble/static/js/runtime-main.6266cb62.js.map",
     "static/js/2.43dcd005.chunk.js": "/rumble/static/js/2.43dcd005.chunk.js",
     "static/js/2.43dcd005.chunk.js.map": "/rumble/static/js/2.43dcd005.chunk.js.map",
     "index.html": "/rumble/index.html",
-    "precache-manifest.99266c373cb5af95264583947a651939.js": "/rumble/precache-manifest.99266c373cb5af95264583947a651939.js",
+    "precache-manifest.4284f208a7939597e3224cd57b392169.js": "/rumble/precache-manifest.4284f208a7939597e3224cd57b392169.js",
     "service-worker.js": "/rumble/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/rumble/static/css/main.5f361e03.chunk.css.map",
     "static/js/2.43dcd005.chunk.js.LICENSE.txt": "/rumble/static/js/2.43dcd005.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.6266cb62.js",
     "static/js/2.43dcd005.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.62f29077.chunk.js"
+    "static/js/main.478a0944.chunk.js"
   ]
 }

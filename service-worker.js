@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/rumble/precache-manifest.99266c373cb5af95264583947a651939.js"
+  "/rumble/precache-manifest.4284f208a7939597e3224cd57b392169.js"
 );
 
 self.addEventListener('message', (event) => {
