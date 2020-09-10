@@ -36,8 +36,8 @@ jobs:
       run: npm install
       
     - name: Clean
-    working-directory: ./rumble-app 
-    run: npm run clean
+      working-directory: ./rumble-app 
+      run: npm run clean
     # - name: Run the tests and generate coverage report
     #   run: npm run test -- --coverage
       
