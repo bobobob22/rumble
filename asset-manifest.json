@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/rumble/static/css/main.5f361e03.chunk.css",
+    "main.js": "/rumble/static/js/main.87a3bf2d.chunk.js",
+    "main.js.map": "/rumble/static/js/main.87a3bf2d.chunk.js.map",
+    "runtime-main.js": "/rumble/static/js/runtime-main.6266cb62.js",
+    "runtime-main.js.map": "/rumble/static/js/runtime-main.6266cb62.js.map",
+    "static/js/2.43dcd005.chunk.js": "/rumble/static/js/2.43dcd005.chunk.js",
+    "static/js/2.43dcd005.chunk.js.map": "/rumble/static/js/2.43dcd005.chunk.js.map",
+    "index.html": "/rumble/index.html",
+    "precache-manifest.ad4ea6bf1406ff0ae9174cd57c84d7a6.js": "/rumble/precache-manifest.ad4ea6bf1406ff0ae9174cd57c84d7a6.js",
+    "service-worker.js": "/rumble/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/rumble/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.43dcd005.chunk.js.LICENSE.txt": "/rumble/static/js/2.43dcd005.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/rumble/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6266cb62.js",
+    "static/js/2.43dcd005.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.87a3bf2d.chunk.js"
+  ]
+}
