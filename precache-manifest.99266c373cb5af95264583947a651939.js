@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0536b357f051f4d184f162e6f1d9ca50",
+    "revision": "c32a0b0d9575c2a57e90e58be5b39580",
     "url": "/rumble/index.html"
   },
   {
-    "revision": "c083a14c698e244feafe",
+    "revision": "e8244e03e90c5825de9c",
     "url": "/rumble/static/css/main.5f361e03.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rumble/static/js/2.43dcd005.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c083a14c698e244feafe",
-    "url": "/rumble/static/js/main.87a3bf2d.chunk.js"
+    "revision": "e8244e03e90c5825de9c",
+    "url": "/rumble/static/js/main.62f29077.chunk.js"
   },
   {
     "revision": "d85e1040cb5fa5120ff8",
