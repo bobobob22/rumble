@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA,UACI,QAEJ,CAEA,gBAHI,WAKJ","file":"main.0d6e798b.chunk.css","sourcesContent":["html, body {\n    margin: 0;\n    height: 100%;\n}\n\n#root {\n    height: 100%;\n}\n"]}
