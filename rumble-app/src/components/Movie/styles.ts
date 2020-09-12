@@ -6,13 +6,13 @@ export const Root = styled.div`
   max-width: 100%;
   max-height: 100%;
   height: 100vh;
-  background: #c2c2c2;
+  background: ${(props) => props.theme.color.main};
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
   
-  @media all and (min-width: 768px) {
+  ${(props) => props.theme.breakpoints.up('md')} {
     max-width: 500px;
     max-height: 600px;
   }
@@ -32,6 +32,9 @@ export const MovieWrapper = styled.div`
 
 export const Title = styled.h2`
    text-align: center;
+   margin-top: 2rem;
+   margin-bottom: 1rem;
+   font-size: 1.2rem;
 `;
 
 export const ImageWrapper = styled.div`
@@ -51,5 +54,5 @@ export const ButtonsWrapper = styled.div`
 `;
 
 export const Summary = styled.p`
-
+  font-style: italic;
 `;

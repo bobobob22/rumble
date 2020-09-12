@@ -9,9 +9,8 @@ import { MovieProps } from './types';
 import { Root, MovieWrapper, Title, ImageWrapper, MovieImage, ButtonsWrapper, Summary } from './styles';
 
 
-const Movie: React.FC<MovieProps> = ({ theme, movie, handleRejectMovie, handleAcceptMovie, isMovieVisible }) => {
+const Movie: React.FC<MovieProps> = ({ theme, movie, handleRejectMovie, handleAcceptMovie }) => {
   const { imageURL, title, summary, rating } = movie;
-
 
   return (
     <Root>
@@ -24,7 +23,7 @@ const Movie: React.FC<MovieProps> = ({ theme, movie, handleRejectMovie, handleAc
           {summary}
         </Summary>
         <ButtonsWrapper>
-          <IconButton icon={faTimesCircle} color="red" onClick={handleRejectMovie} />
+          <IconButton icon={faTimesCircle} color={theme.color.error} onClick={handleRejectMovie} />
           <IconButton icon={faCheckCircle} color={theme.color.active} onClick={handleAcceptMovie} />
         </ButtonsWrapper>
       </MovieWrapper>

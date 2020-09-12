@@ -5,3 +5,11 @@ export interface MoviesListSchema {
   summary: string;
   rating: number;
 }
+
+export interface CarouselProps {
+  sliding?: boolean;
+}
+
+export interface CarouselSlotProps {
+  order?: number
+}

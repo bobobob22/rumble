@@ -18,13 +18,13 @@ export interface CustomTheme extends DefaultTheme {
       lg: number;
       xl: number;
     },
-    up?: (key: string) => string;
+    up?: (key: keyof CustomTheme["breakpoints"]["values"]) => string;
   }
 }
 
 export const theme: CustomTheme = {
   color: {
-    main: '#9dc539',
+    main: '#F0F2F5',
     greyBg: '#F5F6FB',
     error: '#EC4E4F',
     active: '#65CC94',
@@ -39,10 +39,10 @@ export const theme: CustomTheme = {
       lg: 991,
       xl: 1200,
     },
-    // up: (key: string): string => {
-    //   const value = theme.breakpoints.values[key];
-    //   return `@media all and (min-width: ${value}px)`;
-    // },
+    up: (key) => {
+      const value = theme.breakpoints.values[key];
+      return `@media all and (min-width: ${value}px)`;
+    },
   }
 };
 
