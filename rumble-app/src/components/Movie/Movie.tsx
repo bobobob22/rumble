@@ -1,35 +1,60 @@
-import React from 'react';
-import { withTheme } from 'styled-components';
-import { faTimesCircle } from '@fortawesome/free-regular-svg-icons/faTimesCircle';
-import { faCheckCircle } from '@fortawesome/free-regular-svg-icons/faCheckCircle';
+import React from "react";
+import { withTheme } from "styled-components";
+import { faTimesCircle } from "@fortawesome/free-regular-svg-icons/faTimesCircle";
+import { faCheckCircle } from "@fortawesome/free-regular-svg-icons/faCheckCircle";
+import { useSwipeable } from 'react-swipeable';
 
-import IconButton from 'components/IconButton';
 
-import { MovieProps } from './types';
+import IconButton from "components/IconButton";
+
+import { MovieProps } from "./types";
 import {
-  Root, MovieWrapper, Title, ImageWrapper, MovieImage, ButtonsWrapper, Summary,
-} from './styles';
+  Root,
+  MovieWrapper,
+  Title,
+  ImageWrapper,
+  MovieImage,
+  ButtonsWrapper,
+  Summary,
+} from "./styles";
 
 const Movie: React.FC<MovieProps> = ({
-  theme, movie, handleRejectMovie, handleAcceptMovie,
+  id,
+  theme,
+  imageURL,
+  title,
+  summary,
+  rating,
+  handleRejectMovie,
+  handleAcceptMovie,
+  handleSwipeLeft,
+  handleSwipeRight,
 }) => {
-  const {
-    imageURL, title, summary, rating,
-  } = movie;
-
+  const handlers = useSwipeable({
+    onSwipedLeft: () => handleSwipeLeft(id),
+    onSwipedRight: () => handleSwipeRight(id),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  });
   return (
-    <Root>
+    <Root {...handlers}>
       <MovieWrapper>
         <Title>{`${title} ${rating} / 10`}</Title>
         <ImageWrapper>
           <MovieImage src={imageURL} alt={title} />
         </ImageWrapper>
-        <Summary>
-          {summary}
-        </Summary>
+        <Summary>{summary}</Summary>
         <ButtonsWrapper>
-          <IconButton icon={faTimesCircle} color={theme.color.error} onClick={handleRejectMovie} />
-          <IconButton icon={faCheckCircle} color={theme.color.active} onClick={handleAcceptMovie} />
+          <IconButton
+            icon={faTimesCircle}
+            color={theme.color.error}
+            onClick={handleRejectMovie}
+          />
+          <IconButton
+            icon={faCheckCircle}
+            color={theme.color.active}
+            onClick={handleAcceptMovie}
+          />
         </ButtonsWrapper>
       </MovieWrapper>
     </Root>

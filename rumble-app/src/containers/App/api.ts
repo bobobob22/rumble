@@ -9,3 +9,15 @@ export const loadMoviesApi = async function (): Promise<any> {
     return error;
   }
 };
+
+export const updateMoviesData = async function (movieId: string, userChoice: string): Promise<any> {
+  try {
+    const data = await fetch(`${apiUrl}/reccomendations/${movieId}/${userChoice}`, {
+      method: 'PUT',
+    });
+    const responseData = await data.json();
+    return responseData;
+  } catch (error) {
+    return error;
+  }
+};

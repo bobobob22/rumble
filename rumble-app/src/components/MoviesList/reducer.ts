@@ -19,7 +19,6 @@ type Action =
 export const initialState = { pos: 0, sliding: false, dir: NEXT };
 
 export function reducer(state: State, action: Action): State {
-  console.log('state', state, 'action', action);
   switch (action.type) {
     case 'reset':
       return initialState;

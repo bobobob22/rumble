@@ -1,15 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import MoviesList from 'components/MoviesList';
-import GlobalStyle from 'global-styles';
+import MoviesList from "components/MoviesList";
+import GlobalStyle from "global-styles";
 
-import { loadMoviesApi } from './api';
+import { loadMoviesApi, updateMoviesData } from "./api";
+import { ContextProps, MoviesListSchema } from "components/MoviesList/types";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
-export const MoviesContext = React.createContext<any>([[], () => {}]);
+export const MoviesContext = React.createContext<ContextProps>({
+  loading: false,
+  movies: { movies: [] },
+  updateMovie: updateMoviesData
+});
+
+interface AppResponse {
+  movies: MoviesListSchema[];
+}
 
 const App: React.FunctionComponent = () => {
-  const [movies, setMovies] = useState<any>([]);
+  const [response, setResponse] = useState<AppResponse>({ movies: [] });
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
@@ -21,13 +30,13 @@ const App: React.FunctionComponent = () => {
 
     const result = await loadMoviesApi();
     if (result) {
-      setMovies(() => result);
+      setResponse(() => result);
     }
     setLoading(false);
   };
 
   return (
-    <MoviesContext.Provider value={{ loading, movies }}>
+    <MoviesContext.Provider value={{ loading, movies: response, updateMovie: updateMoviesData }}>
       <MoviesList data-testid="app" />
       <GlobalStyle />
     </MoviesContext.Provider>

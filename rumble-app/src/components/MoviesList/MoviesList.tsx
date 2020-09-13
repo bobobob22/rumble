@@ -1,7 +1,4 @@
 import React, { useState, useContext } from 'react';
-import { useSwipeable } from 'react-swipeable';
-
-import { apiUrl } from 'settings';
 
 import { MoviesContext } from 'containers/App';
 import Movie from 'components/Movie';
@@ -11,48 +8,39 @@ import { getOrder, NEXT, PREV } from './helpers';
 import {
   Root, MoviesListWrapper, CarouselContainer, CarouselSlot,
 } from './styles';
+import { ContextProps } from './types';
 
 const MoviesList: React.FC = (props): React.ReactElement | null => {
-  const { loading, movies } = useContext(MoviesContext);
-  const areMoviesExists = movies && movies.movies && movies.movies.length;
+  const { loading, movies, updateMovie } = useContext<ContextProps>(MoviesContext);
+  const numItems: number = movies?.movies?.length;
 
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const [visibleMovieIndex, setVisibleMovieIndex] = useState<number>(0);
 
-  const handleRejectMovie = (movieId: number): void => {
+  const sendUserChoice = async (movieId: string, userChoice: string): Promise<void> => {
+    const result = await updateMovie(movieId, userChoice);
+    if (result) {
+      console.log('updated')
+    }
+  };
+
+  const handleRejectMovie = (movieId: string): void => {
     slide(PREV);
     setVisibleMovieIndex(() => visibleMovieIndex + 1);
     sendUserChoice(movieId, 'reject');
   };
 
-  const handleAcceptMovie = (movieId: number): void => {
+  const handleAcceptMovie = (movieId: string): void => {
     slide(NEXT);
     setVisibleMovieIndex(() => visibleMovieIndex + 1);
     sendUserChoice(movieId, 'accept');
   };
 
-  const sendUserChoice = async (movieId: number, userChoice: string): Promise<void> => {
-    try {
-      const data = await fetch(`${apiUrl}/reccomendations/${movieId}/${userChoice}`, {
-        method: 'PUT',
-      });
-      const responseData = await data.json();
-      if (responseData) {
-        console.log('responseData', responseData);
-      }
-    } catch (error) {
-      console.log('error', error);
-    }
+  const handleSwipeRight = (): void => {
+    slide('stopSliding');
   };
 
-  const numItems: number = movies && movies.movies && movies.movies.length;
-
-  const handleSwipeLeft = (): void => {
-    setVisibleMovieIndex(() => visibleMovieIndex + 1);
-    slide(PREV);
-  };
-
-  const moviesLimitHasAchiewed = areMoviesExists && movies.movies.length === visibleMovieIndex;
+  const moviesLimitHasAchiewed = numItems && numItems === visibleMovieIndex;
 
   const slide = (dir: 'reset' | 'NEXT' | 'PREV' | 'stopSliding'): void => {
     dispatch({ type: dir, numItems });
@@ -61,18 +49,11 @@ const MoviesList: React.FC = (props): React.ReactElement | null => {
     }, 50);
   };
 
-  const handlers = useSwipeable({
-    onSwipedLeft: handleSwipeLeft,
-    onSwipedRight: () => slide('stopSliding'),
-    preventDefaultTouchmoveEvent: true,
-    trackMouse: true,
-  });
-
   if (loading) {
     return <p>Movies are loading...</p>;
   }
 
-  if (!areMoviesExists) {
+  if (!numItems) {
     return null;
   }
 
@@ -81,9 +62,9 @@ const MoviesList: React.FC = (props): React.ReactElement | null => {
       {moviesLimitHasAchiewed ? (
         <p>There is no more movies in our database...</p>
       ) : (
-        <MoviesListWrapper {...handlers}>
+        <MoviesListWrapper>
           <CarouselContainer dir={state.dir} sliding={state.sliding}>
-            {areMoviesExists && movies.movies.map((movie: any, index: any) => {
+            {numItems && movies.movies.map((movie, index) => {
               return (
                 <CarouselSlot
                   // eslint-disable-next-line no-underscore-dangle
@@ -91,11 +72,17 @@ const MoviesList: React.FC = (props): React.ReactElement | null => {
                   order={getOrder({ index, pos: state.pos, numItems })}
                 >
                   <Movie
-                    movie={movie}
+                    id={movie._id}
+                    imageURL={movie.imageURL}
+                    title={movie.title}
+                    summary={movie.summary}
+                    rating={movie.rating}
                     // eslint-disable-next-line no-underscore-dangle
                     handleRejectMovie={() => handleRejectMovie(movie._id)}
                     // eslint-disable-next-line no-underscore-dangle
                     handleAcceptMovie={() => handleAcceptMovie(movie._id)}
+                    handleSwipeLeft={handleRejectMovie}
+                    handleSwipeRight={handleSwipeRight}
                   />
                 </CarouselSlot>
               );
