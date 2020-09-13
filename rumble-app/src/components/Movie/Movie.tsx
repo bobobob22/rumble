@@ -6,16 +6,21 @@ import { faCheckCircle } from '@fortawesome/free-regular-svg-icons/faCheckCircle
 import IconButton from 'components/IconButton';
 
 import { MovieProps } from './types';
-import { Root, MovieWrapper, Title, ImageWrapper, MovieImage, ButtonsWrapper, Summary } from './styles';
+import {
+  Root, MovieWrapper, Title, ImageWrapper, MovieImage, ButtonsWrapper, Summary,
+} from './styles';
 
-
-const Movie: React.FC<MovieProps> = ({ theme, movie, handleRejectMovie, handleAcceptMovie }) => {
-  const { imageURL, title, summary, rating } = movie;
+const Movie: React.FC<MovieProps> = ({
+  theme, movie, handleRejectMovie, handleAcceptMovie,
+}) => {
+  const {
+    imageURL, title, summary, rating,
+  } = movie;
 
   return (
     <Root>
       <MovieWrapper>
-        <Title>{title} {rating} / 10</Title>
+        <Title>{`${title} ${rating} / 10`}</Title>
         <ImageWrapper>
           <MovieImage src={imageURL} alt={title} />
         </ImageWrapper>
@@ -28,7 +33,7 @@ const Movie: React.FC<MovieProps> = ({ theme, movie, handleRejectMovie, handleAc
         </ButtonsWrapper>
       </MovieWrapper>
     </Root>
-  )
+  );
 };
 
 export default withTheme(Movie);

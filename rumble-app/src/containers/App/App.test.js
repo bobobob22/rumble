@@ -5,7 +5,7 @@ import App from './App';
 
 test.skip('renders learn react link', () => {
   const { getByTestId } = render(
-    <App />
+    <App />,
   );
   expect(getByTestId('app')).toBeTruthy();
 });

@@ -8,7 +8,6 @@ import { theme } from 'theme/theme';
 
 import './styles.css';
 
-
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>

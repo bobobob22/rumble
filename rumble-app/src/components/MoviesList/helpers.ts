@@ -4,7 +4,7 @@ interface GetOrderProps {
   numItems: number;
 }
 
-export const getOrder = ({ index, pos, numItems }: GetOrderProps) => {
+export const getOrder = ({ index, pos, numItems }: GetOrderProps): number => {
   return index - pos < 0 ? numItems - Math.abs(index - pos) : index - pos;
 };
 

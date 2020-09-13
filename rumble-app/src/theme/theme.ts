@@ -1,25 +1,24 @@
 import { DefaultTheme } from 'styled-components';
 
-
 export interface CustomTheme extends DefaultTheme {
   color: {
     main: string;
     greyBg: string;
     error: string;
     active: string;
-  },
+  };
   zIndex: {
-    modal: number
-  },
+    modal: number;
+  };
   breakpoints: {
     values: {
       sm: number;
       md: number;
       lg: number;
       xl: number;
-    },
-    up?: (key: keyof CustomTheme["breakpoints"]["values"]) => string;
-  }
+    };
+    up?: (key: keyof CustomTheme['breakpoints']['values']) => string;
+  };
 }
 
 export const theme: CustomTheme = {
@@ -43,6 +42,5 @@ export const theme: CustomTheme = {
       const value = theme.breakpoints.values[key];
       return `@media all and (min-width: ${value}px)`;
     },
-  }
+  },
 };
-

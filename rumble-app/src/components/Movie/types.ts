@@ -1,5 +1,4 @@
-import { CustomTheme } from 'theme/theme'
-
+import { CustomTheme } from 'theme/theme';
 
 export interface MovieProps {
   movie: {
@@ -8,7 +7,7 @@ export interface MovieProps {
     title: string;
     summary: string;
     rating: number;
-  }
+  };
   handleRejectMovie: () => void;
   handleAcceptMovie: () => void;
   isMovieVisible: boolean;

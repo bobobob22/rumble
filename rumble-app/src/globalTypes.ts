@@ -3,19 +3,18 @@ interface HttpResponse<T> extends Response {
 }
 
 export async function http<T>(
-  request: RequestInfo
+  request: RequestInfo,
 ): Promise<HttpResponse<T>> {
   const response: HttpResponse<T> = await fetch(
-    request
+    request,
   );
   response.parsedBody = await response.json();
   return response;
 }
 
-
 export async function get<T>(
   path: string,
-  args: RequestInit = { method: "get" }
+  args: RequestInit = { method: 'get' },
 ): Promise<HttpResponse<T>> {
-  return await http<T>(new Request(path, args));
-};
+  return http<T>(new Request(path, args));
+}

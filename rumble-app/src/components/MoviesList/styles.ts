@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { NEXT } from './helpers';
 import { CarouselProps, CarouselSlotProps } from './types';
 
-
 export const Root = styled.div`
   display: flex;
   align-items: center;
@@ -17,19 +16,19 @@ export const Root = styled.div`
   }
 `;
 
-export const MoviesListWrapper= styled.div`
+export const MoviesListWrapper = styled.div`
   overflow: hidden;
   width: 100%;
 `;
 
 export const CarouselContainer = styled.div`
   display: flex;
-  transition: ${(props: CarouselProps) => (props.sliding ? "none" : "transform .3s ease-in")};
+  transition: ${(props: CarouselProps) => (props.sliding ? 'none' : 'transform .3s ease-in')};
 
-  transform: ${props => {
-    if (!props.sliding) return "translateX(calc(-100%))";
-    if (props.dir === NEXT) return "translateX(calc(2 * (-100%)))";
-    return "translateX(0%)";
+  transform: ${(props) => {
+    if (!props.sliding) return 'translateX(calc(-100%))';
+    if (props.dir === NEXT) return 'translateX(calc(2 * (-100%)))';
+    return 'translateX(0%)';
   }};
 `;
 

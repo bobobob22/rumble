@@ -4,8 +4,8 @@ import { apiUrl } from 'settings';
 import MoviesList from 'components/MoviesList';
 import GlobalStyle from 'global-styles';
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
 export const MoviesContext = React.createContext<any>([[], () => {}]);
-
 
 const App: React.FunctionComponent = () => {
   const [movies, setMovies] = useState([]);
@@ -14,15 +14,15 @@ const App: React.FunctionComponent = () => {
     loadMovies();
   }, []);
 
-  const loadMovies = async () => {
+  const loadMovies = async function (): Promise<void> {
     try {
-      const data = await fetch(`${apiUrl}/all`)
+      const data = await fetch(`${apiUrl}/all`);
       const responseData = await data.json();
       if (responseData) {
         setMovies(() => responseData);
       }
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     }
   };
 

@@ -11,5 +11,5 @@ export interface CarouselProps {
 }
 
 export interface CarouselSlotProps {
-  order?: number
+  order?: number;
 }
