@@ -53,5 +53,6 @@ export const ButtonsWrapper = styled.div`
 `;
 
 export const Summary = styled.p`
+  margin-top: 1rem;
   font-style: italic;
 `;

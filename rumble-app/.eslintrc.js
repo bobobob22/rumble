@@ -19,9 +19,14 @@ module.exports = {
   ],
   rules: {
     "@typescript-eslint/consistent-type-assertions": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
     "arrow-parens": [
       "error",
       "always"
+    ],
+    "max-len": [
+      "error",
+      120
     ],
     "arrow-body-style": [
       1,
@@ -96,7 +101,7 @@ module.exports = {
     "require-yield": 0,
     "no-param-reassign": ["error", { "props": false }],
     "@typescript-eslint/explicit-member-accessibility": "off",
-    "@typescript-eslint/no-explicit-any": false,
+    "@typescript-eslint/no-explicit-any": 1,
     "@typescript-eslint/explicit-function-return-type": [
       "error",
       {
