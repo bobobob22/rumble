@@ -1,4 +1,6 @@
 # Rumble project - Simple Movies Tinder 
+Swipe left or click cross - send unlike to backend
+Click accept - send like to backend
 
 ## How to run the project?
 
