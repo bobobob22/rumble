@@ -3,6 +3,7 @@ import { apiUrl } from 'settings';
 export const loadMoviesApi = async function (): Promise<any> {
   try {
     const data = await fetch(`${apiUrl}/all`);
+    console.log("DATA", data)
     const responseData = await data.json();
     return responseData;
   } catch (error) {

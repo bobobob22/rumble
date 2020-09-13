@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 
-import { MoviesContext } from 'containers/App';
+import { MoviesContext } from 'context/MoviesContext';
 import Movie from 'components/Movie';
 
 import { reducer, initialState } from './reducer';
@@ -58,9 +58,9 @@ const MoviesList: React.FC = (props): React.ReactElement | null => {
   }
 
   return (
-    <Root>
+    <Root data-testid="movies-root">
       {moviesLimitHasAchiewed ? (
-        <p>There is no more movies in our database...</p>
+        <p data-testid="no-response">There is no more movies in our database...</p>
       ) : (
         <MoviesListWrapper>
           <CarouselContainer dir={state.dir} sliding={state.sliding}>
@@ -72,6 +72,7 @@ const MoviesList: React.FC = (props): React.ReactElement | null => {
                   order={getOrder({ index, pos: state.pos, numItems })}
                 >
                   <Movie
+                    data-testid="movie"
                     id={movie._id}
                     imageURL={movie.imageURL}
                     title={movie.title}
