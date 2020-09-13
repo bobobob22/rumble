@@ -16,7 +16,7 @@ type Action =
   // eslint-disable-next-line @typescript-eslint/member-delimiter-style
   | { type: 'PREV', numItems: number };
 
-export const initialState = { pos: 5, sliding: false, dir: NEXT };
+export const initialState = { pos: 0, sliding: false, dir: NEXT };
 
 export function reducer(state: State, action: Action): State {
   console.log('state', state, 'action', action);

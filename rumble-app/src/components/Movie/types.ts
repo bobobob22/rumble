@@ -10,6 +10,5 @@ export interface MovieProps {
   };
   handleRejectMovie: () => void;
   handleAcceptMovie: () => void;
-  isMovieVisible: boolean;
   theme: CustomTheme;
 }

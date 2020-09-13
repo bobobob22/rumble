@@ -84,7 +84,6 @@ const MoviesList: React.FC = (props): React.ReactElement | null => {
         <MoviesListWrapper {...handlers}>
           <CarouselContainer dir={state.dir} sliding={state.sliding}>
             {areMoviesExists && movies.movies.map((movie: any, index: any) => {
-              const isMovieVisible = index === visibleMovieIndex;
               return (
                 <CarouselSlot
                   // eslint-disable-next-line no-underscore-dangle
@@ -97,7 +96,6 @@ const MoviesList: React.FC = (props): React.ReactElement | null => {
                     handleRejectMovie={() => handleRejectMovie(movie._id)}
                     // eslint-disable-next-line no-underscore-dangle
                     handleAcceptMovie={() => handleAcceptMovie(movie._id)}
-                    isMovieVisible={isMovieVisible}
                   />
                 </CarouselSlot>
               );

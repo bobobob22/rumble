@@ -16,7 +16,7 @@ const App: React.FunctionComponent = () => {
     loadMovies();
   }, []);
 
-  const loadMovies = async function (): void {
+  const loadMovies = async function (): Promise<void> {
     setLoading(true);
 
     const result = await loadMoviesApi();
