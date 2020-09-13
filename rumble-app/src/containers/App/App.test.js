@@ -19,13 +19,12 @@ it('renders learn react link', async () => {
           title: 'title',
           imageURL: 'test.jpg',
           accept: 'accept',
-        }
-      ]
+        },
+      ],
     ));
     render(<App />);
-  })
+  });
   expect(window.fetch).toHaveBeenCalledTimes(1);
-  expect(screen.getByText("Movies are loading...")).toBeInTheDocument();
+  expect(screen.getByText('Movies are loading...')).toBeInTheDocument();
   // expect(screen.getByText("title")).toBeInTheDocument();
 });
-
