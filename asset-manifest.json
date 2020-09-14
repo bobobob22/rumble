@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/rumble/static/css/main.16426e8c.chunk.css",
-    "main.js": "/rumble/static/js/main.0ed9cfc9.chunk.js",
-    "main.js.map": "/rumble/static/js/main.0ed9cfc9.chunk.js.map",
+    "main.js": "/rumble/static/js/main.ef9bdbd1.chunk.js",
+    "main.js.map": "/rumble/static/js/main.ef9bdbd1.chunk.js.map",
     "runtime-main.js": "/rumble/static/js/runtime-main.6266cb62.js",
     "runtime-main.js.map": "/rumble/static/js/runtime-main.6266cb62.js.map",
     "static/css/2.764ccc25.chunk.css": "/rumble/static/css/2.764ccc25.chunk.css",
-    "static/js/2.9514d18f.chunk.js": "/rumble/static/js/2.9514d18f.chunk.js",
-    "static/js/2.9514d18f.chunk.js.map": "/rumble/static/js/2.9514d18f.chunk.js.map",
+    "static/js/2.5dac3d00.chunk.js": "/rumble/static/js/2.5dac3d00.chunk.js",
+    "static/js/2.5dac3d00.chunk.js.map": "/rumble/static/js/2.5dac3d00.chunk.js.map",
     "index.html": "/rumble/index.html",
-    "precache-manifest.69f43d488c2a00a15d36b77a041dad47.js": "/rumble/precache-manifest.69f43d488c2a00a15d36b77a041dad47.js",
+    "precache-manifest.6abeb51286aec088bb1b2c727599f9a9.js": "/rumble/precache-manifest.6abeb51286aec088bb1b2c727599f9a9.js",
     "service-worker.js": "/rumble/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/rumble/static/css/2.764ccc25.chunk.css.map",
     "static/css/main.16426e8c.chunk.css.map": "/rumble/static/css/main.16426e8c.chunk.css.map",
-    "static/js/2.9514d18f.chunk.js.LICENSE.txt": "/rumble/static/js/2.9514d18f.chunk.js.LICENSE.txt"
+    "static/js/2.5dac3d00.chunk.js.LICENSE.txt": "/rumble/static/js/2.5dac3d00.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6266cb62.js",
     "static/css/2.764ccc25.chunk.css",
-    "static/js/2.9514d18f.chunk.js",
+    "static/js/2.5dac3d00.chunk.js",
     "static/css/main.16426e8c.chunk.css",
-    "static/js/main.0ed9cfc9.chunk.js"
+    "static/js/main.ef9bdbd1.chunk.js"
   ]
 }
