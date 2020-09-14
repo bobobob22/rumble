@@ -20,7 +20,7 @@ const MoviesList: React.FC = (props): React.ReactElement | null => {
   const sendUserChoice = async (movieId: string, userChoice: string): Promise<void> => {
     const result = await updateMovie(movieId, userChoice);
     if (result) {
-      console.log('updated')
+      console.log('updated');
     }
   };
 
@@ -73,6 +73,7 @@ const MoviesList: React.FC = (props): React.ReactElement | null => {
                 >
                   <Movie
                     data-testid="movie"
+                    // eslint-disable-next-line no-underscore-dangle
                     id={movie._id}
                     imageURL={movie.imageURL}
                     title={movie.title}

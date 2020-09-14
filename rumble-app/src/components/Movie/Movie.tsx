@@ -1,13 +1,12 @@
-import React from "react";
-import { withTheme } from "styled-components";
-import { faTimesCircle } from "@fortawesome/free-regular-svg-icons/faTimesCircle";
-import { faCheckCircle } from "@fortawesome/free-regular-svg-icons/faCheckCircle";
+import React from 'react';
+import { withTheme } from 'styled-components';
+import { faTimesCircle } from '@fortawesome/free-regular-svg-icons/faTimesCircle';
+import { faCheckCircle } from '@fortawesome/free-regular-svg-icons/faCheckCircle';
 import { useSwipeable } from 'react-swipeable';
 
+import IconButton from 'components/IconButton';
 
-import IconButton from "components/IconButton";
-
-import { MovieProps } from "./types";
+import { MovieProps } from './types';
 import {
   Root,
   MovieWrapper,
@@ -16,7 +15,7 @@ import {
   MovieImage,
   ButtonsWrapper,
   Summary,
-} from "./styles";
+} from './styles';
 
 const Movie: React.FC<MovieProps> = ({
   id,

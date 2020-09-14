@@ -6,7 +6,7 @@ import { theme } from 'theme/theme';
 import { MoviesContext } from 'context/MoviesContext';
 import MoviesList from './MoviesList';
 
-it('renders learn react link', () => {
+it('should render movies list', () => {
   const movies = [
     {
       id: '12',
@@ -23,15 +23,15 @@ it('renders learn react link', () => {
       rating: 6.5,
       title: 'title2',
       imageURL: 'test2.jpg',
-    }
+    },
   ];
 
   const { container } = render(
     <ThemeProvider theme={theme}>
-      <MoviesContext.Provider value={ { loading: false, movies: { movies: movies }, updateMovie: jest.fn() }}>
+      <MoviesContext.Provider value={{ loading: false, movies: { movies }, updateMovie: jest.fn() }}>
         <MoviesList />
       </MoviesContext.Provider>
-    </ThemeProvider>
+    </ThemeProvider>,
   );
   expect(screen.getByText(movies[0].summary)).toBeInTheDocument();
 
@@ -42,7 +42,7 @@ it('renders learn react link', () => {
     new MouseEvent('click', {
       bubbles: true,
       cancelable: true,
-    })
+    }),
   );
   expect(screen.getByText(movies[1].summary)).toBeInTheDocument();
 });

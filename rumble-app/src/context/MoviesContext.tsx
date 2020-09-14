@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { loadMoviesApi, updateMoviesData } from 'containers/App/api';
-import { ContextProps, MoviesListSchema } from "components/MoviesList/types";
+import { ContextProps, MoviesListSchema } from 'components/MoviesList/types';
+
+import { loadMoviesApi, updateMoviesData } from './api';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 export const MoviesContext = React.createContext<ContextProps>({
   loading: false,
   movies: { movies: [] },
-  updateMovie: updateMoviesData
+  updateMovie: updateMoviesData,
 });
 
 interface AppResponse {
   movies: MoviesListSchema[];
 }
 
-export const MoviesProvider: React.FunctionComponent = ({children}) => {
+export const MoviesProvider: React.FunctionComponent = ({ children }) => {
   const [response, setResponse] = useState<AppResponse>({ movies: [] });
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -31,7 +32,6 @@ export const MoviesProvider: React.FunctionComponent = ({children}) => {
     }
     setLoading(false);
   };
-  console.log('response', response);
 
   return (
     <MoviesContext.Provider value={{ loading, movies: response, updateMovie: updateMoviesData }}>
@@ -39,4 +39,3 @@ export const MoviesProvider: React.FunctionComponent = ({children}) => {
     </MoviesContext.Provider>
   );
 };
-

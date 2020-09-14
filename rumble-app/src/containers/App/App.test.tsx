@@ -1,13 +1,15 @@
 import React from 'react';
-import { render, waitForElement, getByTestId, screen } from '@testing-library/react';
+import {
+  render, waitForElement, getByTestId, screen,
+} from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 import fetch from 'jest-fetch-mock';
 
 import App from './App';
-import { theme } from "../../theme/theme";
-import { ThemeProvider } from "styled-components";
+import { theme } from 'theme/theme';
+import { ThemeProvider } from 'styled-components';
 
-it('renders icon button', async () => {
+it('should return response data', async () => {
   beforeEach(() => {
     fetch.resetMocks();
   });
@@ -33,17 +35,17 @@ it('renders icon button', async () => {
             accept: 'reject',
           },
         ],
-      }
+      },
     ));
   });
-  const {container, debug} = render(
+  const { container } = render(
     <ThemeProvider theme={theme}>
       <App />
-    </ThemeProvider>
+    </ThemeProvider>,
   );
   expect(window.fetch).toHaveBeenCalledTimes(1);
 
-  const moviesRoot = await waitForElement(() => getByTestId(container,"movies-root"));
+  const moviesRoot = await waitForElement(() => getByTestId(container, 'movies-root'));
   expect(screen.getByText('summary')).toBeInTheDocument();
   expect(screen.getByText('summary2')).toBeInTheDocument();
 });

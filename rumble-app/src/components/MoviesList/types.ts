@@ -15,11 +15,10 @@ export interface CarouselSlotProps {
   order?: number;
 }
 
-
 export interface ContextProps {
   loading: boolean;
   movies: {
-    movies: MoviesListSchema[]
+    movies: MoviesListSchema[];
   };
-  updateMovie: (movieId: string, userChoice: string) => Promise<any>
+  updateMovie: (movieId: string, userChoice: string) => Promise<any>;
 }
